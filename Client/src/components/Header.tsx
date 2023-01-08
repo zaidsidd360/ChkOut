@@ -10,22 +10,15 @@ const Header = () => {
     <Nav>
         <ul>
             <li id='push'><img src={Logo} alt="Logo" width="120px" height="auto" /></li>
-            <BsSearch className='searchIcon'/>
-            <li id='rounded'><input type="search" /></li>
-            <BsCart2 className='moveRight' size={"1.2em"}/>
-            <li>Cart</li>
-            <BiUserCircle className='moveRight' size={"1.4em"}/>
-            <li>Account</li>
+            <li id='rounded'><BsSearch className='searchIcon'/><input type="search" /></li>
+            <li><BsCart2 className='mRight' size={"1.2em"}/><p>Cart</p></li>
+            <li><BiUserCircle className='mRight' size={"1.4em"}/> <p>Account</p></li>
         </ul>
     </Nav>
   )
 }
 
 const Nav = Styled.nav`
-    /* background-color: #99d08c; */
-    /* max-width: 70%;
-    margin-inline: auto; */
-    
     ul {
         font-size: 1.3em;
         margin: 0;
@@ -35,37 +28,47 @@ const Nav = Styled.nav`
         display: flex;
         align-items: center;
         list-style: none;
+        
         li {
             margin-inline: 1em;
+            display: flex;
+            align-items: center;
+            
+            &:hover {
+                cursor: pointer;
+            }
+
+            input { 
+                font-size: 0.7em;
+                background: transparent;
+                border: 1px solid #000;
+                border-radius: 1.5em;
+                outline: none;
+                padding: 0.8em;
+                padding-left: 3em;
+                width: 5em;
+                transition: all 0.5s ease-in-out;
+            }
+
+            input:focus {
+                width: 20em;
+            }
+
+            .searchIcon {
+                transform: translateX(1.5em);
+                z-index: -1;
+            }
+
+            .mRight {
+                margin-right: 0.5em;
+            }
         }
+
         #push {
             margin-right: auto;
             margin-left: none;
         }
-        li > input { 
-            font-size: 0.7em;
-            background: transparent;
-            border: 1px solid #000;
-            border-radius: 1.5em;
-            outline: none;
-            padding: 0.8em;
-            padding-left: 3em;
-            width: 5em;
-            transition: all 0.5s ease-in-out;
-        }
-        li > input:focus {
-            width: 20em;
-        }
-        li:hover {
-            cursor: pointer;
-        }
-        .searchIcon {
-            transform: translateX(2.5em);
-            z-index: -1;
-        }
-        .moveRight {
-            transform: translateX(0.7em);
-        }
+        
     }
 `
 
