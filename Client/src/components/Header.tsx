@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Styled from "styled-components"
 import Logo from "../assets/logo.png"
 import {BsSearch} from "react-icons/bs"
@@ -6,11 +6,25 @@ import {BsCart2} from "react-icons/bs"
 import {BiUserCircle} from "react-icons/bi"
 
 const Header = () => {
+    const [blurredNav, setBlurredNav] = useState(false);
+    const changeBackground = () => {
+        console.log(window.scrollY)
+        if (window.scrollY >= 25) {
+            setBlurredNav(true)
+        } else {
+            setBlurredNav(false)
+        }
+    }
+    useEffect(() => {
+      window.addEventListener("scroll", changeBackground)
+      console.log(window.scrollY)
+    })
+    
   return (
     <Nav>
         <ul>
             <li id='push'><img src={Logo} alt="Logo" width="120px" height="auto" /></li>
-            <li id='rounded'><BsSearch className='searchIcon'/><input type="search" /></li>
+            <li id='rounded'><BsSearch className='searchIcon'/><input type="search" autoFocus/></li>
             <li><BsCart2 className='mRight' size={"1.2em"}/><p>Cart</p></li>
             <li><BiUserCircle className='mRight' size={"1.4em"}/> <p>Account</p></li>
         </ul>
@@ -19,17 +33,24 @@ const Header = () => {
 }
 
 const Nav = Styled.nav`
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    
     ul {
         font-size: 1.3em;
         margin: 0;
         padding: 0;
         height: 5em;
-        width: 100%;
+        width: 70%;
         display: flex;
         align-items: center;
         list-style: none;
+        margin-inline: auto;
         
         li {
+            z-index: 10;
             margin-inline: 1em;
             display: flex;
             align-items: center;
@@ -56,7 +77,7 @@ const Nav = Styled.nav`
 
             .searchIcon {
                 transform: translateX(1.5em);
-                z-index: -1;
+                z-index: -10;
             }
 
             .mRight {

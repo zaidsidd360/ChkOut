@@ -7,7 +7,9 @@ function App(): JSX.Element {
   return (
     <>
     <Header/>
+    <div className='mainbody'>
     <Home/> {/*Change dynamically with react-router-dom*/}
+    </div>
     </>
   )
 }

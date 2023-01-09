@@ -3,6 +3,10 @@
 body {
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
-    padding-inline: 15%;
+    /* padding-inline: 15%; */
     box-sizing: border-box;
+}
+
+.mainbody {
+    padding-inline: 15%;
 }

@@ -6,7 +6,7 @@ const Banner = () => {
 	return (
 		<BannerContainer>
 			<div>
-				<h1>Feel every beat. Nonstop.</h1>
+				<h1>Feel every beat, nonstop.</h1>
 				<h2>Get free Spotify premium for 3 months on purchase of select brands.*</h2>
 			</div>
 			<img className='model' src={Model} alt="Model" />
