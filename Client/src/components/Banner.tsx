@@ -17,7 +17,7 @@ const Banner = () => {
 const BannerContainer = styled.div`
 	width: 100%;
 	height: 25em;
-	background-color: #345E84;
+	background-color: #d7e7f3;
 	display: flex;
 	justify-content: center;
 	border-radius: 2em;
@@ -28,14 +28,17 @@ const BannerContainer = styled.div`
 		width: auto;
 		transform: scale(1.1);
 		transform-origin: bottom;
-		filter: drop-shadow(-5px 0px 10px #2c4f70);
+		filter: drop-shadow(-5px 0px 10px #a8b3bd);
 	}
 
 	div {
-		color: #fff;
+		color: #2c4f70;
 		margin-left: 3em;
 		h1 {
 			font-size: 5em;
+		}
+		h2 {
+			max-width: 20em;
 		}
 	}
 `

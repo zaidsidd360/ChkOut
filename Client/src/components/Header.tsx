@@ -25,8 +25,8 @@ const Header = () => {
         <ul>
             <li id='push'><img src={Logo} alt="Logo" width="120px" height="auto" /></li>
             <li id='rounded'><BsSearch className='searchIcon'/><input type="search" autoFocus/></li>
-            <li><BsCart2 className='mRight' size={"1.2em"}/><p>Cart</p></li>
-            <li><BiUserCircle className='mRight' size={"1.4em"}/> <p>Account</p></li>
+            <li id='underline'><BsCart2 className='mRight' size={"1.2em"}/><p>Cart</p></li>
+            <li id='underline'><BiUserCircle className='mRight' size={"1.4em"}/> <p>Account</p></li>
         </ul>
     </Nav>
   )
@@ -36,13 +36,14 @@ const Nav = Styled.nav`
     position: sticky;
     top: 0;
     z-index: 10;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
+    height: 7em;
     
     ul {
         font-size: 1.3em;
         margin: 0;
         padding: 0;
-        height: 5em;
+        height: 100%;
         width: 70%;
         display: flex;
         align-items: center;
@@ -50,6 +51,7 @@ const Nav = Styled.nav`
         margin-inline: auto;
         
         li {
+            height: 100%;
             z-index: 10;
             margin-inline: 1em;
             display: flex;
@@ -69,10 +71,10 @@ const Nav = Styled.nav`
                 padding-left: 3em;
                 width: 5em;
                 transition: all 0.5s ease-in-out;
-            }
 
-            input:focus {
-                width: 20em;
+                &:focus {
+                    width: 20em;
+                }
             }
 
             .searchIcon {
@@ -84,12 +86,18 @@ const Nav = Styled.nav`
                 margin-right: 0.5em;
             }
         }
+        
+        #underline {
+            padding-inline: 0.5em;
+            &:hover {
+                border-bottom: 1px solid black;
+            }
+        }
 
         #push {
             margin-right: auto;
             margin-left: none;
-        }
-        
+        } 
     }
 `
 
