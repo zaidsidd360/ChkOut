@@ -1,3 +1,3 @@
 # ChkOut
 
-A full stack e-commerce project; currently in developement.
+A full stack React + Django e-commerce project; currently in developement.
