@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Styled from "styled-components"
 import Logo from "../assets/logo.png"
 import {BsSearch} from "react-icons/bs"
@@ -6,20 +6,6 @@ import {BsCart2} from "react-icons/bs"
 import {BiUserCircle} from "react-icons/bi"
 
 const Header = () => {
-    const [blurredNav, setBlurredNav] = useState(false);
-    const changeBackground = () => {
-        console.log(window.scrollY)
-        if (window.scrollY >= 25) {
-            setBlurredNav(true)
-        } else {
-            setBlurredNav(false)
-        }
-    }
-    useEffect(() => {
-      window.addEventListener("scroll", changeBackground)
-      console.log(window.scrollY)
-    })
-    
   return (
     <Nav>
         <ul>
