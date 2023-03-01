@@ -1,19 +1,16 @@
-import React from 'react'
-import products from '../products.json'
+import React from "react";
+import products from "../products.json";
+import ProductCard from "./ProductCard";
 
 const ProductList = (): JSX.Element => {
-    console.log(products)
+  console.log(products);
   return (
     <div>
-    {products.map((product) => {
-        return (<>
-            <h1>{product.name}</h1>
-            <p>{product.description}</p>
-            </>
-        )
-    })}
+      {products.map((product) => {
+        return <ProductCard product={product} />;
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default ProductList
+export default ProductList;
