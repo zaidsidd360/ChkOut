@@ -6,10 +6,13 @@ const Banner = () => {
   return (
     <BannerContainer>
       <div>
-        <h1>Feel every beat, nonstop.</h1>
+        <h1>
+          Feel every beat,
+          <br /> nonstop.
+        </h1>
         <p>
-          Get <b>free Spotify premium</b> for 3 months on purchase of select
-          brands.<span>*</span>
+          Get <b>free Spotify premium</b> for upto 3 months on purchase of
+          select brands.<span>*</span>
         </p>
       </div>
       <img className="model" src={Model} alt="Model" />
@@ -22,7 +25,7 @@ const BannerContainer = styled.div`
   height: 25em;
   background-color: #d7e7f3;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   border-radius: 2em;
   margin-top: 3em;
 

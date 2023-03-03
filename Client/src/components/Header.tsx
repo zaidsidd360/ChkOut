@@ -1,22 +1,32 @@
-import React from 'react'
-import Styled from "styled-components"
-import Logo from "../assets/logo.png"
-import {BsSearch} from "react-icons/bs"
-import {BsCart2} from "react-icons/bs"
-import {BiUserCircle} from "react-icons/bi"
+import React from "react";
+import Styled from "styled-components";
+import Logo from "../assets/logo.png";
+import { BsSearch } from "react-icons/bs";
+import { BsCart2 } from "react-icons/bs";
+import { BiUserCircle } from "react-icons/bi";
 
 const Header = () => {
   return (
     <Nav>
-        <ul>
-            <li id='push'><img src={Logo} alt="Logo" width="120px" height="auto" /></li>
-            <li id='rounded'><BsSearch className='searchIcon'/><input type="search" autoFocus/></li>
-            <li id='underline'><BsCart2 className='mRight' size={"1.2em"}/><p>Cart</p></li>
-            <li id='underline'><BiUserCircle className='mRight' size={"1.4em"}/> <p>Account</p></li>
-        </ul>
+      <ul>
+        <li id="push">
+          <img src={Logo} alt="Logo" width="120px" height="auto" />
+        </li>
+        <li id="rounded">
+          <BsSearch className="searchIcon" />
+          <input type="search" autoFocus />
+        </li>
+        <li id="underline">
+          <BsCart2 className="mRight" size={"1.2em"} />
+          <p>Cart</p>
+        </li>
+        <li id="underline">
+          <BiUserCircle className="mRight" size={"1.4em"} /> <p>Account</p>
+        </li>
+      </ul>
     </Nav>
-  )
-}
+  );
+};
 
 const Nav = Styled.nav`
     position: sticky;
@@ -30,7 +40,7 @@ const Nav = Styled.nav`
         margin: 0;
         padding: 0;
         height: 100%;
-        width: 70%;
+        width: 75%;
         display: flex;
         align-items: center;
         list-style: none;
@@ -85,6 +95,6 @@ const Nav = Styled.nav`
             margin-left: none;
         } 
     }
-`
+`;
 
-export default Header
+export default Header;
