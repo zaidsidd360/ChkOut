@@ -1,6 +1,6 @@
 import React from "react";
 import Styled from "styled-components";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logoMain.png";
 import { BsSearch } from "react-icons/bs";
 import { BsCart2 } from "react-icons/bs";
 import { BiUserCircle } from "react-icons/bi";
