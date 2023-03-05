@@ -51,6 +51,7 @@ const Product = styled.div`
   max-width: 400px;
   border-radius: 20px;
   padding: 0 20px 0 20px;
+  cursor: pointer;
   img {
     margin-top: 20px;
     border-radius: 10px;

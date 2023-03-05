@@ -14,15 +14,15 @@ const Footer = () => {
       </ul>
       <ul>
         <li>Partners</li>
-        <li>About us</li>
         <li>Contact us</li>
         <li>Billing Query</li>
+        <li>About us</li>
       </ul>
       <ul>
         <li>Partners</li>
+        <li>Billing Query</li>
         <li>About us</li>
         <li>Contact us</li>
-        <li>Billing Query</li>
       </ul>
     </FooterContainer>
   );
@@ -35,7 +35,7 @@ const FooterContainer = styled.div`
   padding-inline: 10%;
   height: 40vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   img {
     /* background-color: white; */

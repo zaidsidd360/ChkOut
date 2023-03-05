@@ -1,36 +1,60 @@
 import React from "react";
 import styled from "styled-components";
-import products from "../products.json";
 import ProductCard from "./ProductCard";
 
-const ProductList = (): JSX.Element => {
+interface ProductListProps {
+  heading: string;
+  products: any;
+}
+
+const ProductList = (props: ProductListProps): JSX.Element => {
+  const { heading, products } = props;
   return (
-    <Container>
-      <List>
-        {products.map((product, idx) => {
-          return <ProductCard product={product} key={idx} />;
-        })}
-      </List>
-    </Container>
+    <>
+      <ContainerMain>
+        <h1>{heading}</h1>
+        <ProductsContainer>
+          {products.map((product: any, idx: number) => {
+            return <ProductCard product={product} key={idx} />;
+          })}
+        </ProductsContainer>
+        <span>View more</span>
+      </ContainerMain>
+    </>
   );
 };
 
-const Container = styled.div`
+const ContainerMain = styled.div`
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-direction: column;
+  margin: 2em 0 2em 0;
+  h1 {
+    font-size: 2.5em;
+    margin: 1em 0 1em 0.5em;
+  }
+  span {
+    padding: 0.3em;
+    border-radius: 0.8em;
+    background-color: #151515;
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: auto;
+    cursor: pointer;
+  }
 `;
-const List = styled.div`
+
+const ProductsContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 1em;
   width: 100%;
-  margin: 30px 0 30px 0;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px; */
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  margin-bottom: 1em;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
 export default ProductList;
